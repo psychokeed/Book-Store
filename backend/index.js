@@ -29,7 +29,7 @@ app.get('/', (request, response) => {
     app.use('/books', booksRoute);
 
  mongoose
-    .connect(mongoDBURL)
+    .connect(mongoDBURL, {useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('App connected to database');
         app.listen(PORT, () => {
@@ -38,5 +38,9 @@ app.get('/', (request, response) => {
     })
     .catch((error) => {
         console.log(error);
+    });
+
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
     });
  
