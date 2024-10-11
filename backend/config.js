@@ -1,7 +1,5 @@
-import dotenv from 'dotenv';
+export const PORT = 5555;
 
-// Load environment variables from .env file
-dotenv.config();
+export const mongoDBURL = 'mongodb+srv://briannzuki555:3HOsPQuwi6UX8NRL@cluster0.8hmg8.mongodb.net/books-collection?retryWrites=true&w=majority&appName=Cluster0';
 
-export const PORT = process.env.PORT || 5555;
-export const mongoDBURL = process.env.MONGODB_URI || 'mongodb://localhost:27017/books-collection';
+
